@@ -4,9 +4,8 @@ import React, {Fragment, useState} from 'react'
 import Navbar from './layout/Navbar'
 import Home from './layout/Home'
 
-const App = () => {
 
-   
+const App = () => {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -14,8 +13,10 @@ const App = () => {
     email: ''
   });
   const {name, password, email} = formData;
+
   const [inputValue, setInputValue] = useState('')
   const [submit, toggleSubmit] = useState(false)
+  const [valid, setValid] = useState(false)
 
 
   // Clock Update
@@ -31,23 +32,31 @@ const App = () => {
   const handleOnchange = event => setFormData({...formData, [event.target.name]: event.target.value});
 
   const handleSubmit = event => {
-    
-    setInputValue(formData);
-    setFormData('')
-    toggleSubmit(true)
-    updateTime();
 
-    event.preventDefault();
-  }
+    console.log(formData)
+
+     if(name && password && email){
+          setInputValue(formData);
+          setValid(true)     
+          updateTime();
+        }
+      else{   
+        alert('Try Again ..')
+      }
+      toggleSubmit(true)
+      setFormData('')
+      event.preventDefault();
+  }  
+    
+  
 
   const handleLogOut = event => {
-    event.preventDefault();
-
+  
     setInputValue('')
     setFormData('')
+    setValid(false)
+    event.preventDefault();
   }
-
-
 
   return (
     <Fragment>
@@ -64,6 +73,7 @@ const App = () => {
       handleOnchange = {handleOnchange}
       inputValue = {inputValue}
       handleSubmit = {handleSubmit}
+      valid={valid}
       submit = {submit}
       />
     </Fragment>

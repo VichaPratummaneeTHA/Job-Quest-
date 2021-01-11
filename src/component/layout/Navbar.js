@@ -5,9 +5,9 @@ const Navbar = ({
 }) => {
   return (
     <Fragment>
-      <nav id='main-nav' className='navbar navbar-expand-lg navbar-dark fixed-top'>
-        <div className="container">
-          <a href="#!" className="navbar-brand">
+      <nav id='main-nav' className='navbar navbar-expand-lg navbar-light bg-dark fixed-top'>
+        <div className="container p-0">
+          <a href="#!" className="navbar-brand mx-1">
             <i></i>
             <h3 className="d-inline align-middle">VC</h3>
           </a>
@@ -18,19 +18,19 @@ const Navbar = ({
 
         <div id='navbarCollapse' className='collapse navbar-collapse'>
           <ul className='navbar-nav ml-auto'>
-            <li className='nav-item px-4'>
+            <li className='nav-item px-1'>
               <a href="#home" className='nav-link text-warning'>Home</a>
             </li>
-            <li className='nav-item px-4'>
+            <li className='nav-item px-1'>
               <button 
-                className='btn btn-out-line-primary text-warning m-0'
+                className='btn btn-out-line-primary shadow-none text-warning m-0'
                 data-toggle="modal"
                 data-target="#contactModal"
                 >Contact</button>
             </li>
           </ul>
 
-          <form className='d-flex w-50 p-2 justify-content-center'>
+          <form className='d-flex max-width: 100% p-2 justify-content-end justify-content-md-start'>
           {
             inputValue.name && <Fragment>
             <span className='p-1 mr-2 box-time'>
@@ -41,14 +41,14 @@ const Navbar = ({
           }
           
             
-            <div className="input-group w-50 h-25">
+            <div className="input-group max-width: 100% h-25">
                 <span className='input-group-text'>
                   <i className='fas fa-user text-warning'></i>
                 </span>
               <input type="text" className='form-control text-center' placeholder={inputValue.name}/>
             </div>
 
-            <button className='btn btn-outline-warning btn-block w-25 ml-1' type='submit' onClick={event => handleLogOut(event)}>
+            <button className='btn btn-outline-warning btn-block w-50 ml-1' type='submit' onClick={event => handleLogOut(event)}>
               Log-out
             </button>
           </form>

@@ -6,8 +6,11 @@
 }
 
 body {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
   font-family: 'Asul', sans-serif;
-  background: #333;
+  background: #000;
 }
 
 .navbar {
@@ -19,6 +22,13 @@ body {
       text-transform: uppercase;
       border: none;
       height: 100%;
+      list-style: none;
+      outline: 0;
+      box-shadow: rgba(0, 0, 0, 0);
+      & :focus {
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0);
+      }
     }
   }
 
@@ -56,8 +66,10 @@ body {
   }
 }
 
+// Home
+
 #home-section {
-  background: url('https://source.unsplash.com/weekly?animal');
+  background: url('https://source.unsplash.com/daily');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -73,7 +85,11 @@ body {
   }
 
   .home-inner {
-    padding-top: 160px;
+    padding-top: 12rem;
+  }
+
+  .home-action {
+    padding-top: 5rem;
   }
 
   .fas {
@@ -85,5 +101,323 @@ body {
 
   .card-form {
     border-radius: 5px;
+  }
+}
+
+// search area
+
+#searchArea {
+  height: 110vh;
+  width: 100%;
+
+  .container {
+    padding-top: 5rem;
+
+    .col-md-2 {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+
+  .col-sm-10 {
+    padding-top: 4rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .card {
+    position: relative;
+    transition: transform 0.2s;
+    min-width: 250px;
+    min-height: 600px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+
+      .overlay {
+        opacity: 1;
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      transition: 0.5s ease;
+      opacity: 0;
+      bottom: 0;
+      font-size: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      color: #f6830f;
+    }
+
+    .card-body {
+      width: 100%;
+      height: 100%;
+
+      hr {
+        background: #f6830f;
+        border: solid 1px;
+      }
+
+      p {
+        font-size: 1.5rem;
+        line-height: 2;
+      }
+    }
+  }
+}
+
+// joke fav
+
+#jokeFav {
+  width: 100%;
+  height: 100vh;
+
+  .container {
+    padding-top: 7rem;
+
+    .row {
+      width: 100%;
+      height: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      flex-wrap: nowrap;
+    }
+
+    .note {
+      min-width: 350px;
+      min-height: 300px;
+      background: #fff;
+      border-radius: 7px;
+      box-shadow: 0 2px 5px #ccc;
+      padding: 1rem;
+      margin: 1rem;
+      float: left;
+
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.2em;
+        max-width: 320px;
+        max-height: 280px;
+        min-height: 250px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        border-bottom: solid #f6830f 1px;
+      }
+
+      button {
+        position: relative;
+        float: right;
+        margin-right: 10px;
+        color: #f5ba13;
+        border: none;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        outline: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  #main-nav {
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .box-input {
+      justify-content: end;
+    }
+  }
+
+  #home-section {
+    .home-inner {
+      width: 100%;
+      padding-top: 350px;
+    }
+  }
+
+  #searchArea {
+    .container {
+      padding-top: 8rem;
+
+      .col-md-2 {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+
+    .col-sm-10 {
+      padding-top: 6rem;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .card {
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-item {
+    .btn {
+      padding-left: 0px;
+    }
+  }
+
+  #home-section {
+    .home-inner {
+      padding-top: 300px;
+    }
+  }
+
+  #searchArea {
+    .container {
+      padding-top: 6rem;
+
+      .col-md-2 {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+
+    .col-sm-10 {
+      padding-top: 3rem;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .card {
+      position: relative;
+      padding: 0;
+      min-width: 250px;
+      min-height: 700px;
+
+      .card-body {
+        p {
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  #main-nav {
+    .navbar {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  #home-section {
+    .home-inner {
+      padding-top: 200px;
+    }
+
+    h1 {
+      font-size: 2 rem;
+    }
+  }
+
+  #searchArea {
+    .container {
+      padding-top: 6rem;
+
+      .col-md-2 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .col-md-2,
+      .col-md-4 {
+        margin-bottom: 0.8rem;
+      }
+
+      .input-id-box {
+        display: inline-block;
+        .form-control {
+          display: inline-block;
+          width: 3rem;
+        }
+      }
+
+      button {
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+
+    .col-sm-10 {
+      padding-top: 1.8rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .card {
+      position: relative;
+      transition: transform 0.2s;
+      padding: 0;
+      min-width: 250px;
+      min-height: 180px;
+
+      &:hover {
+        cursor: pointer;
+        // transform: scale(1.1);
+
+        .overlay {
+          opacity: 1;
+        }
+      }
+      .overlay {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        transition: 0.5s ease;
+        opacity: 0;
+        bottom: 0;
+        font-size: 1rem;
+        padding: 1.5rem;
+        text-align: center;
+        color: #f6830f;
+      }
+    }
+  }
+  #jokeFav {
+    .container {
+      padding-top: 7rem;
+
+      .note {
+        min-width: 250px;
+        min-height: 150px;
+        margin-left: 2rem;
+        margin-right: 0;
+      }
+    }
+    .col {
+      justify-content: space-between;
+      h1 {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      }
+    }
   }
 }
