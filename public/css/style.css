@@ -59,6 +59,9 @@ body {
     background: rgba(0, 0, 0, 0.8); }
   #home-section .home-inner {
     padding-top: 12rem; }
+    #home-section .home-inner p {
+      margin-left: 2rem;
+      font-size: 1.2rem; }
   #home-section .home-action {
     padding-top: 5rem; }
   #home-section .fas {
@@ -84,8 +87,8 @@ body {
   #searchArea .card {
     position: relative;
     transition: transform 0.2s;
-    min-width: 250px;
-    min-height: 600px;
+    min-width: 200px;
+    min-height: 450px;
     border-left-width: 0px;
     border-bottom-width: 0px;
     border-right-width: 0px;

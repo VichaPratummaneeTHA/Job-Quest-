@@ -1,0 +1,191 @@
+1. Explain the what's similar & difference between cookie / localStorage / sessionStorage.
+
+- Cookie คือ
+
+    การทำให้เจ้าของเว็บไซต์สามารถจัดเก็บข้อมูลบางอย่างไว้ที่เว็บบราวเซอร์ของผู้ใช้งาน
+
+  -- ข้อเสีย --
+
+    ข้อมูลส่วนตัวบางส่วนอาจถูกลักลอบส่งกลับไปยังเว็บไซต์ไม่พึงประสงค์ จนนำไปสู่การถูกแฮกข้อมูลบัญชีใช้งาน โดยเฉพาะอย่างยิ่งข้อมูลเกี่ยวกับการทำธุรกรรมออนไลน์ 
+
+- LocalStorage คือ
+
+    การเก็บข้อมูลใส่ Local Storage แบบถาวร ข้อมูลจะหายไปก็ต่อเมื่อ clear Storage หรือกำหนดเวลาวันหมดอายุ
+
+  -- ข้อเสีย --
+    
+    เนื่องจาก Web Storage เก็บข้อมูลเป็น String ดังนั้นมีโอกาสถูกอ่านข้อมูลได้ง่ายไม่ปลอดภัย จึงไม่นิยมใช้ Web Storageในการเก็บข้อมูลที่เป็นความลับ
+
+- sessionStorage คือ
+
+  การเก็บข้อมูลใส่ Session Storage ซึ่งเมื่อปิดเว็บบราวเซอร์ข้อมูลก็จะหายไปหรือกำหนดระยะเวลาวันหมดอายุ เป็น web session สร้างขึ้นเมื่อ client เปิดบราวเซอร์และติดต่อกับ URL ของเว็ปไซค์นั้นๆ 
+
+
+2. Today React have hooks. Do we still need a class component? If your answer is yes then which case that we still need to use class component.
+
+
+3. Breifly describe how Virtual DOM works.
+
+4. Consider this React's components tree
+
+Apps > ComponentA > ComponentB > ComponentC > ComponentD > ComponentE
+
+*If we have a state at Apps component, and ComponentE component want to access that state value. How do you implements this?
+
+5. What different between using relative / absolute / fixed to position the element.
+
+property position ใน CSS จะประกอบไปด้วย 4 ประเภท
+
+1. static
+2. relative
+3. absolute
+4. fixed
+
+static  คือ
+
+- เป็นค่ากำหนดโดย CSS ถ้าไม่การระบุคำสั่ง จะไม่รองรับการกำหนดค่า left , top, right และ bottom
+
+การแสดงผล 
+
+- จะแสดงผลออกมา ณ​ จุด ๆ นั้นที่ element อยู่ (normal flow) และ ไม่สามารถกำหนดพิกัดใดใดให้ได้ 
+
+relative คือ
+
+การแสดงผล
+- จะแสดงผลออกมา ณ จุด ๆ นั้นที่ element อยู่ (normal flow) แต่สามารถระบุพิกัดให้กับตัวมันได้ 
+
+absolute คือ
+- จะถูกแสดงผลออกมาแบบอิสระไม่ยึดติดกับ normal flow สามารถกำหนดที่อยู่ของมันได้อย่างอิสระบน webpage
+
+fixed คือ
+- จะถูกแสดงผลออกมาแบบอิสระเช่นเดียวกับ absolute แต่จะมีการกำหนดตำแหน่งกับตำแหน่งของขอบในบราวเชอร์และจะไม่เคลื่อนที่เมื่อมีการใช่เมาส์ scrollbar
+
+6. Explain the different between using callback / Promise / async await. When to use and when not to.
+
+โปรแกรมจะทำงาน 2 รูปแบบคือ
+
+1. Synchronous - การทำงานของโปรแกรมตามลำดับขั้นตอน
+
+ตัวอย่าง 
+
+  console.log(1);
+  console.log(2);
+  console.log(3);
+
+แสดงผล 1, 2, 3
+
+2. Asynchronous - การทำงานของโปรแกรมไม่เป็นไปตามลำดับขั้นตอน
+
+ตัวอย่าง 
+
+  console.log(1);
+  
+  setTimeout(function(){
+  console.log(2);
+  }, 3000);
+
+  console.log(3);
+
+แสดงผล 1, 3, 2
+
+ซึ่ง callback / Promise / async await  เป็นการทำงานแบบ Asynchronous
+
+callback คือ
+  -  function ที่จะถูกเรียกหลัง function อื่นทำงานเสร็จ ทำให้การทำงานเป็นแบบ synchronous
+ตัวอย่าง 
+
+1.
+  const list = ["man", "woman", "boy", "lady"];
+
+  const newList = list.map(function(value){
+    return value + 'good';
+  });
+
+  console.log(newList); // mangood, womangood, boygood, ladygood
+
+2.
+
+  function greeting(name){
+    console.log("Hello World, $(name)");
+  }
+
+  function introduction (firstName, lastName, callback){
+    const fullName = firstName + lastName;
+
+    callback(fullName);
+  }
+
+  introduction("vicha", "Pratummanee", greeting);
+
+promise คือ
+  - คือ object ทีลดปัญหาการ call back ที่ดูยากไม่เป็นระเบียบ เป็นการกำหนดว่าจะทำสิ่งนั้น จริงๆ
+
+ตัวอย่าง 
+
+  const weather = true;
+
+  const date = new Promise(function(resolve, reject){
+    if(weather){
+      const dataDetails = {
+        name: "Vicha",
+        location: "Bangkok",
+        table: 10
+      }
+
+      resolve(dataDetails);
+    }else{
+      reject(new Error("Bad Weather"));
+    }
+  }):
+  
+  -- promise chain
+
+  const myDate = function(){
+    date.then(function(done){
+      console.log("Happy your the day");
+      console.log(done);
+    }).catch(function(err){
+      console.log(err);
+    })
+  }
+
+async await คือ
+  - ใช้เพื่อบอกให้ JavaScript รอจนกว่าคำสั่งนั้นจะเสร็จ ถึงค่อยไปทำงานอันต่อไป 
+
+การเขียนแบบ promise แล้วทำให้ดูอ่านยาก
+
+  taskOne().then(function () {
+  taskTwo().then(function () {
+    taskThree().then(function () {
+      taskFour().then(function () {
+        taskFive().then(function () {
+          taskSix().then(function () {
+            taskSeven().then(function () {
+              taskEight().then(function () {
+                taskNine().then(function () {
+                  taskTen();
+                })
+              })
+            })
+          })
+        })
+      })
+    })
+  })
+});
+
+ใช้การเขียนแบบ  await และ async
+
+async function main() {
+  await taskOne();
+  await taskTwo();
+  await taskThree();
+  await taskFour();
+  await taskFive();
+  await taskSix();
+  await taskSeven();
+  await taskEight();
+  await taskNine();
+  await taskTen();
+}
+main();

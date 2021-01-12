@@ -9,10 +9,10 @@ const App = () => {
 
   const [formData, setFormData] = useState({
     name: '',
-    password: '',
+    lastName: '',
     email: ''
   });
-  const {name, password, email} = formData;
+  const {name, lastName, email} = formData;
 
   const [inputValue, setInputValue] = useState('')
   const [submit, toggleSubmit] = useState(false)
@@ -35,7 +35,7 @@ const App = () => {
 
     console.log(formData)
 
-     if(name && password && email){
+     if(name && lastName && email){
           setInputValue(formData);
           setValid(true)     
           updateTime();
@@ -68,7 +68,7 @@ const App = () => {
        />
       <Home 
       name = {name}
-      password = {password}
+      lastName = {lastName}
       email = {email}
       handleOnchange = {handleOnchange}
       inputValue = {inputValue}

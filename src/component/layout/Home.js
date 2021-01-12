@@ -3,7 +3,7 @@ import SearchArea from './card/SearchArea'
 import Footer from './Footer'
 
 const Home = ({
-  name, password, email, handleOnchange , inputValue, handleSubmit , submit, valid 
+  name, lastName, email, handleOnchange , inputValue, handleSubmit , submit, valid 
 }) => {
 
   return (
@@ -18,13 +18,14 @@ const Home = ({
             <div className="row justify-content-around">
                 <div className="col-md-6 d-none d-lg-inline m-0 p-0 ">
               <h1 className='display-5 text-center py-2'>Welcome To Get The Joke</h1>
-              <div className="d-flex">
 
+              <div className="d-flex justify-content-start">
                 <div className="p-3 align-self-start">
                   <i className='fas fa-check fa-2x'></i>
                 </div>
-                <div className="p-3 align-self-center">
-                  Step 1 Register by Fill-in the form
+                <div className="p-3 d-flex w-100 justify-content-start">
+                   <h4 >Step 1</h4>
+                   <p className='align-self-end'>Register by Fill-in the form</p> 
                 </div>
               </div>
 
@@ -32,8 +33,9 @@ const Home = ({
                 <div className="p-3 align-self-start">
                   <i className='fas fa-check fa-2x'></i>
                 </div>
-                <div className="p-3 align-self-center">
-                  Step 2 Checking by Username
+                <div className="p-3 d-flex w-100 justify-content-start">
+                  <h4>Step 2</h4>
+                  <p className='align-self-end'>Register by Fill-in the form</p> 
                 </div>
               </div>
 
@@ -41,8 +43,9 @@ const Home = ({
                 <div className="p-3 align-self-start">
                   <i className='fas fa-check fa-2x'></i>
                 </div>
-                <div className="p-3 align-self-center">
-                  Step 3 Enjoy with The Joke ...
+                <div className="p-3 d-flex w-100 justify-content-start">
+                <h4>Step 3 </h4>
+                <p className='align-self-end'> Enjoy with The Joke ...</p> 
                 </div>
               </div>
 
@@ -62,6 +65,7 @@ const Home = ({
                         placeholder='Username'
                         value={name || ''}
                         onChange={event => handleOnchange(event)}
+                        autofocus
                         />
                         {
                           submit && !name && <span className='text-danger'>** Please Enter Your Username **</span>
@@ -70,15 +74,15 @@ const Home = ({
                       </div>
                       <div className="form-group">
                         <input
-                        name='password'  
-                        type="password" 
+                        name='lastName'  
+                        type="text" 
                         className="form-control mb-2" 
-                        placeholder='Password'
-                        value={password || ''}
+                        placeholder='LastName'
+                        value={lastName || ''}
                         onChange={event => handleOnchange(event)}
                         />
                          {
-                          submit && !password && <span className='text-danger'>** Please Enter Your Password **</span>
+                          submit && !lastName && <span className='text-danger'>** Please Enter Your Password **</span>
                         }
                       </div>
                       <div className="form-group">
@@ -120,7 +124,7 @@ const Home = ({
         </div>
       </div>
    </header>
-    {!valid && 
+    {valid && 
     <Fragment>
       <SearchArea />
       <Footer />

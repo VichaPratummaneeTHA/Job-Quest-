@@ -80,7 +80,7 @@ const Navbar = ({
                     <input type="email" className='form-control'/>
                   </div>
                   <div className="form-group">
-                    <label htmlFor='name'>Name</label>
+                    <label htmlFor='Message'>Message</label>
                     <textarea type="text" className='form-control' cols='30' rows='10'/>
                   </div>
                 </form>
