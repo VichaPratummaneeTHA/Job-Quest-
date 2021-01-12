@@ -19,7 +19,7 @@ const SearchArea = () => {
 
   if(id > 1 || id)
   {
-    const url = `https://api.icndb.com/jokes/${id}`
+    const url = `http://api.icndb.com/jokes/${id}`
     const res = await fetch(url);
     const JSON = await res.json();
     console.log(JSON)
@@ -40,7 +40,7 @@ const SearchArea = () => {
       lastName = 'Doe'
     }
  
-    const url = `https://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}`
+    const url = `http://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}`
     const res = await fetch(url);
     const JSON = await res.json();
 
