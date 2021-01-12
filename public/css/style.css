@@ -244,10 +244,11 @@ body {
     position: relative;
     transition: transform 0.2s;
     padding: 0;
-    min-width: 250px;
-    min-height: 180px; }
+    width: 100%;
+    min-height: 500px; }
     #searchArea .card:hover {
-      cursor: pointer; }
+      cursor: pointer;
+      transform: scale(1); }
       #searchArea .card:hover .overlay {
         opacity: 1; }
     #searchArea .card .overlay {
@@ -262,15 +263,21 @@ body {
       text-align: center;
       color: #f6830f; }
 
-  #jokeFav .container {
-    padding-top: 7rem; }
-    #jokeFav .container .note {
-      min-width: 250px;
-      min-height: 150px;
-      margin-left: 2rem;
-      margin-right: 0; }
-  #jokeFav .col {
-    justify-content: space-between; }
-    #jokeFav .col h1 {
-      font-size: 1.5rem;
-      margin-top: 1rem; } }
+  #jokeFav {
+    height: 90vh; }
+    #jokeFav .container {
+      padding-top: 3rem; }
+      #jokeFav .container .row {
+        padding-top: 2rem; }
+      #jokeFav .container .note {
+        width: 100%;
+        min-height: 300px;
+        margin-left: 2rem;
+        margin-right: 0;
+        padding: 1rem; }
+    #jokeFav .col {
+      justify-content: space-between; }
+      #jokeFav .col h1 {
+        font-size: 1.8rem;
+        margin-top: 1rem;
+        margin: auto; } }

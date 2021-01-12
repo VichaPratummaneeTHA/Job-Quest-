@@ -65,7 +65,7 @@ const Home = ({
                         placeholder='Username'
                         value={name || ''}
                         onChange={event => handleOnchange(event)}
-                        autofocus
+                        autoFocus
                         />
                         {
                           submit && !name && <span className='text-danger'>** Please Enter Your Username **</span>
@@ -124,7 +124,7 @@ const Home = ({
         </div>
       </div>
    </header>
-    {valid && 
+    {!valid && 
     <Fragment>
       <SearchArea />
       <Footer />

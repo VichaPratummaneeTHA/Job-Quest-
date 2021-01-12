@@ -7,9 +7,9 @@ const JokeFav = ({
     <Fragment>
       <section id='jokeFav'>
         <div className="container">
-            <div className="row d-flex align-items-center">
-                <div className='col d-flex align-conten-center'>
-                  <h1 >Joke Favourites</h1>
+            <div className="row d-flex align-content-center">
+                <div className='col d-flex align-content-center'>
+                  <h1>Joke Favourites</h1>
                   <a href="#searchArea">
                     <i className="fas fa-plus-circle ml-2 p-1 fa-3x" />
                   </a>

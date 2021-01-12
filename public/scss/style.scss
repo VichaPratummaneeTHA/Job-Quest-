@@ -381,12 +381,12 @@ body {
       position: relative;
       transition: transform 0.2s;
       padding: 0;
-      min-width: 250px;
-      min-height: 180px;
+      width: 100%;
+      min-height: 500px;
 
       &:hover {
         cursor: pointer;
-        // transform: scale(1.1);
+        transform: scale(1);
 
         .overlay {
           opacity: 1;
@@ -407,21 +407,29 @@ body {
     }
   }
   #jokeFav {
+    height: 90vh;
+
     .container {
-      padding-top: 7rem;
+      padding-top: 3rem;
+
+      .row {
+        padding-top: 2rem;
+      }
 
       .note {
-        min-width: 250px;
-        min-height: 150px;
+        width: 100%;
+        min-height: 300px;
         margin-left: 2rem;
         margin-right: 0;
+        padding: 1rem;
       }
     }
     .col {
       justify-content: space-between;
       h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin-top: 1rem;
+        margin: auto;
       }
     }
   }
