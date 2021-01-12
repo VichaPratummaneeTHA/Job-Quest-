@@ -21,7 +21,10 @@ const CardItem = ({
                 }
                   
                   <hr/>
-                  <p className='py-3'>{jokes.joke}</p>
+                  <p 
+                  className='py-3'
+                  dangerouslySetInnerHTML={{__html: jokes.joke}}
+                  />
                  
                 </div>
                 <div 
