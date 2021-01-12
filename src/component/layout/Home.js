@@ -15,7 +15,8 @@ const Home = ({
             {
               !valid ? (
                 <Fragment>
-            <div className="row justify-content-around">
+            <div className="row justify-content-around pt-2">
+
                 <div className="col-md-6 d-none d-lg-inline m-0 p-0 ">
               <h1 className='display-5 text-center py-2'>Welcome To Get The Joke</h1>
 
@@ -25,7 +26,7 @@ const Home = ({
                 </div>
                 <div className="p-3 d-flex w-100 justify-content-start">
                    <h4 >Step 1</h4>
-                   <p className='align-self-end'>Register by Fill-in the form</p> 
+                   <p className='align-self-end'>Get Joke by Fill-in the form ...</p> 
                 </div>
               </div>
 
@@ -35,7 +36,7 @@ const Home = ({
                 </div>
                 <div className="p-3 d-flex w-100 justify-content-start">
                   <h4>Step 2</h4>
-                  <p className='align-self-end'>Register by Fill-in the form</p> 
+                  <p className='align-self-end'>We provide the joke for you ...</p> 
                 </div>
               </div>
 
@@ -124,7 +125,7 @@ const Home = ({
         </div>
       </div>
    </header>
-    {!valid && 
+    {valid && 
     <Fragment>
       <SearchArea />
       <Footer />

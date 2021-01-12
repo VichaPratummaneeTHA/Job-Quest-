@@ -19,7 +19,7 @@ const SearchArea = () => {
 
   if(id > 1 || id)
   {
-    const url = `http://api.icndb.com/jokes/${id}`
+    const url = `https://api.icndb.com/jokes/${id}`
     const res = await fetch(url);
     const JSON = await res.json();
     console.log(JSON)
@@ -40,7 +40,7 @@ const SearchArea = () => {
       lastName = 'Doe'
     }
  
-    const url = `http://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}`
+    const url = `https://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}`
     const res = await fetch(url);
     const JSON = await res.json();
 
@@ -120,9 +120,9 @@ const SearchArea = () => {
             <form className="row" onSubmit={event => handleSubmit(event)}>
 
             <div className="d-flex col-md-2 input-id-box">
-              <button className='btn btn-primary' onClick={(event) => handleIncreaseNumberId(event)}>+</button>
+              <button className='btn btn-warning' onClick={(event) => handleIncreaseNumberId(event)}>+</button>
               <input name ='id' type="text" className='form-control mb-resp mx-1 p-2 text-center input-id' placeholder='ID' value={values.id} onChange={(event)=> handleChange(event)}/>
-              <button className='btn btn-danger' onClick={(event) => handleDecreaseNumberId(event)}>-</button>
+              <button className='btn btn-secondary' onClick={(event) => handleDecreaseNumberId(event)}>-</button>
             </div>
            
             <div className="col-md-4">
