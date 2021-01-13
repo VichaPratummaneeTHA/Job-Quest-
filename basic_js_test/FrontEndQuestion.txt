@@ -23,6 +23,7 @@
 
 2. Today React have hooks. Do we still need a class component? If your answer is yes then which case that we still need to use class component.
 
+  - React Hooks ทำให้การเขียน React นัน้ทำให้ Component ของเราสามารถทำการนำกลับมาใช้ใหม่ได้ง่ายขี้น เพราะสามารถที่จะแชร์ระหว่าง function component ได้เลย แล้วรูปแบบกสรเขียนก็สั้นแล้วง่ายขึ้น สำหรับ class component ถ้าถามว่าจะยังมีความจำเป็นไม่ไหม คำตอบขึ้นอยู่กับผู้เขียนโปรแกรมว่าต้องใช้การเขียนในรูปแบบนี้หรือไม่เพราะประสิทธิของผลที่ออกมาได้เหมือนการใช้ React Hooks
 
 3. Breifly describe how Virtual DOM works.
 
@@ -46,7 +47,7 @@ Apps > ComponentA > ComponentB > ComponentC > ComponentD > ComponentE
 
 การส่งข้อมูลระหว่าง prarent กับ child ใน component react จะใช้วิธีการส่งข้อมูล ผ่าน prop เมื่อ child ต้องการใช้งานให้เรียกผ่าน prop แทน state ได้เลย ตามตัวอย่างด้านล่าง
 
-  *** Prarent Component ***
+  *** Parent Component ***
 
   import React from 'react'
   import Component_E from 'Component_E'

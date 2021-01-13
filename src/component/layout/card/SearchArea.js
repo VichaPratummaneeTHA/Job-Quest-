@@ -19,16 +19,14 @@ const SearchArea = () => {
 
   if(id > 1 || id)
   {
-    const url = `https://api.icndb.com/jokes/${id}`
+    const url = `http://api.icndb.com/jokes/${id}`
     const res = await fetch(url);
     const JSON = await res.json();
     console.log(JSON)
     if(JSON.value){
      setJokes(JSON.value);
     }
-  }
-
-  }
+  }}
  
   const getRandomJoke = async (firstName, lastName) => {
 

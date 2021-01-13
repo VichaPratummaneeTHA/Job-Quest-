@@ -4,7 +4,6 @@ import React, {Fragment, useState} from 'react'
 import Navbar from './layout/Navbar'
 import Home from './layout/Home'
 
-
 const App = () => {
 
   const [formData, setFormData] = useState({
@@ -12,6 +11,7 @@ const App = () => {
     lastName: '',
     email: ''
   });
+
   const {name, lastName, email} = formData;
 
   const [inputValue, setInputValue] = useState('')
@@ -60,12 +60,13 @@ const App = () => {
 
   return (
     <Fragment>
+
       <Navbar
       time= {time}
       inputValue = {inputValue}
       handleLogOut = {handleLogOut}
-   
        />
+
       <Home 
       name = {name}
       lastName = {lastName}
@@ -76,7 +77,9 @@ const App = () => {
       valid={valid}
       submit = {submit}
       />
+
     </Fragment>
+    
   )
 }
 

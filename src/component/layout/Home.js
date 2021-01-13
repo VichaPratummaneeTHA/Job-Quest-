@@ -55,7 +55,7 @@ const Home = ({
             <div className="col-md-6 m-0 p-2">
               <div className="card bg-warning card-form">
                   <div className="card-body">
-                    <h3 className='text-light text-center'>Sign In</h3>
+                    <h3 className='text-light text-center'>Sign In{name}</h3>
                     <p className='text-light text-center'>Please fill out this form to sign-In</p>
                     <form onSubmit={(event) => handleSubmit(event)}>
                       <div className="form-group">
@@ -129,7 +129,7 @@ const Home = ({
         </div>
       </div>
    </header>
-    {valid && 
+    {!valid && 
     <Fragment>
       <SearchArea />
       <Footer />
