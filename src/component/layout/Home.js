@@ -109,12 +109,16 @@ const Home = ({
               ) : (
                 <Fragment>
                   <div className="row align-content-center justify-content-center home-action">
-                    <div className="col-md-12 d-flex flex-column text-center">
+                    <div className="col-md-12 d-flex flex-column text-center p-2">
                       <h1 className='display-3 text-warning mb-4'>
                         <i className='fas fa-user mr-4 d-none d-md-inline'></i>
                          Welcome {inputValue.name}
                       </h1>
-                      <p className='text-muted'>{inputValue.email}vicha@gmail.com</p>
+                      <p className='text-light'>{inputValue.email}vicha@gmail.com</p>
+                      <a href="#searchArea">
+                        <button className='btn btn-warning btn-block'>Start Here</button>
+                      </a>
+                     
                     </div>
                   </div>
                  

@@ -115,7 +115,7 @@ const SearchArea = () => {
 
   return (
     <Fragment>
-        <section id='searchArea' className='bg-light text-white'>
+        <section id='searchArea' className='bg-dark text-white'>
           <div className="container">
             <form className="row" onSubmit={event => handleSubmit(event)}>
 
@@ -146,7 +146,7 @@ const SearchArea = () => {
                />
               </div>
               <div className="col-md-2">
-            <button className='btn btn-warning btn-block ' type='submit'> <i className='fas fa-search mr-1 text-white'></i> submit
+            <button className='btn btn-warning btn-block ' type='submit'> <i className='fas fa-search mr-1 text-white'></i> Get The Joke
             </button>
               </div>         
             </form>

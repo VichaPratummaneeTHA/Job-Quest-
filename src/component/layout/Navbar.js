@@ -87,7 +87,9 @@ const Navbar = ({
               </div>
 
               <div className='modal-footer'>
+              <a href="#home-section">
               <button className='btn btn-outline-light btn-block'>Contact Us</button>
+              </a>
               </div>
             </div>
           </div>

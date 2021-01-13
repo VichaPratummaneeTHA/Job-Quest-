@@ -9,7 +9,8 @@ body {
   height: 100vh;
   box-sizing: border-box;
   font-family: 'Asul', sans-serif;
-  background: #000; }
+  background-color: #ba6000;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png"); }
 
 .navbar {
   border-bottom: #f6830f 3px solid;
@@ -45,10 +46,6 @@ body {
       outline: none; }
 
 #home-section {
-  background: url("https://source.unsplash.com/daily");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   height: 100vh; }
   #home-section .dark-over {
     position: absolute;
@@ -64,6 +61,12 @@ body {
       font-size: 1.2rem; }
   #home-section .home-action {
     padding-top: 5rem; }
+    #home-section .home-action button {
+      margin: 0 auto;
+      margin-top: 1.2 rem;
+      width: 300px; }
+    #home-section .home-action a {
+      text-decoration: none; }
   #home-section .fas {
     background: #fff;
     border: #f6830f 1px solid;
@@ -73,7 +76,7 @@ body {
     border-radius: 5px; }
 
 #searchArea {
-  height: 110vh;
+  height: 80vh;
   width: 100%; }
   #searchArea .container {
     padding-top: 5rem; }
@@ -216,7 +219,12 @@ body {
     padding: 0; }
 
   #home-section .home-inner {
-    padding-top: 200px; }
+    padding-top: 8rem; }
+  #home-section .home-action {
+    padding-top: 3rem; }
+  #home-section .row {
+    margin-right: 0;
+    margin-left: 0; }
   #home-section h1 {
     font-size: 2 rem; }
 
@@ -245,7 +253,7 @@ body {
     transition: transform 0.2s;
     padding: 0;
     width: 100%;
-    min-height: 500px; }
+    min-height: 400px; }
     #searchArea .card:hover {
       cursor: pointer;
       transform: scale(1); }
