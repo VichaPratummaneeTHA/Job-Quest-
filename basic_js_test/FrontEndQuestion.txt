@@ -26,11 +26,57 @@
 
 3. Breifly describe how Virtual DOM works.
 
+  - Virtual DOM เป็นรูปแแบการจัดการข้อมูลแบบ node tree เช่นเดียวกับ Directly DOM  แต่ในการแสดงผลของข้อมูลใหม่เมื่อมีการเปลี่ยนแปลงจะแตกต่างกัน
+
+  สำหรับ Directly DOM 
+    การจัดการกับข้อมูลซึ่งมีการเปลียนแปลงให้จะทำการ render ทุกๆครั้งเมื่อมีการเปลี่ยนแปลงของข้อมูล ซึ่งข้อมูลใหม่แทนที่ข้อมูลเก่าทั้งหมดเมื่อมีการเปลียนของข้อมูลโดยผู้ใช้
+
+  สำหรับ Virtual DOM
+    การจัดการกับข้อมูลซึ่งมีการเปลียนแปลงให้จะทำการ render ทุกๆครั้งเมื่อมีการเปลี่ยนแปลงของข้อมูล ซึ่งข้อมูลใหม่แทนที่ข้อมูลเก่าทั้งหมดเมื่อมีการเปลียนของข้อมูลโดยผู้ใช้ เหมือนกันกับ Directly DOM แต่ความแตกต่างคือ Virtual DOM แต่ครั้งที่เกิดความเปลียนแปลงข้อมูลใน React App ขั้นตอนการทำงานมี 3 ขั้นตอนดังนี้
+    
+    1. ทุกๆครั้งที่มีการเปลียนแปลงของข้อมูล การจัดการกับข้อมูลซึ่งมีการเปลียนแปลงจะทำการ re-render ทุกๆครั้งเมื่อมีการเปลี่ยนแปลงของข้อมูล 
+    2. จะคำนวณเปรียบเทียบข้อมูลใหม่กับข้อมูลเก่า
+    3. หลังจากนั้นการทำงานของ Virtual DOM จะปรับปรุงข้อมูลแล้ว re-render เฉพาะที่ข้อมูลทีเปลี่ยนแปลงเท่านั้น
+
 4. Consider this React's components tree
 
-Apps > ComponentA > ComponentB > ComponentC > ComponentD > ComponentE
+Apps > ComponentA > ComponentB > ComponentC > ComponentD > ComponentE 
 
-*If we have a state at Apps component, and ComponentE component want to access that state value. How do you implements this?
+*If we have a state at Apps component, and ComponentE component want to access that state value. How do you implements this?*
+
+การส่งข้อมูลระหว่าง prarent กับ child ใน component react จะใช้วิธีการส่งข้อมูล ผ่าน prop เมื่อ child ต้องการใช้งานให้เรียกผ่าน prop แทน state ได้เลย ตามตัวอย่างด้านล่าง
+
+  *** Prarent Component ***
+
+  import React from 'react'
+  import Component_E from 'Component_E'
+
+  const App = () => {
+     const [data, SetData] = useState('Hello World')
+
+    return (
+    <Component_E 
+      data = {data}
+    />
+  )
+  }
+ 
+  export default App
+
+  *** Child Component E ***
+
+  import React from 'react'
+
+  const Component_E = (prop) => {
+    return (
+      <div>
+        <h1>{prop.data}</h1>
+      </div>
+    )
+  }
+
+  export default Component_E
+
 
 5. What different between using relative / absolute / fixed to position the element.
 
