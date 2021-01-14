@@ -129,7 +129,7 @@ const Home = ({
         </div>
       </div>
    </header>
-    {!valid && 
+    {valid && 
     <Fragment>
       <SearchArea />
       <Footer />
