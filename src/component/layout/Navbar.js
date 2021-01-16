@@ -1,15 +1,23 @@
 import React, {Fragment} from 'react'
+import WifiRoundedIcon from '@material-ui/icons/WifiRounded';
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
+import PhoneForwardedRoundedIcon from '@material-ui/icons/PhoneForwardedRounded';
+import LockOpenRoundedIcon from '@material-ui/icons/LockOpenRounded';
+
 
 const Navbar = ({
-  time, inputValue, handleLogOut 
+  time, inputValue, valid, handleLogOut 
 }) => {
   return (
     <Fragment>
       <nav id='main-nav' className='navbar navbar-expand-lg navbar-light bg-dark fixed-top'>
         <div className="container p-0">
-          <a href="#!" className="navbar-brand mx-1">
+          <a href="#!" className="navbar-brand mt-1">
             <i></i>
-            <h3 className="d-inline align-middle">VC</h3>
+            <h3 className="d-inline align-middle">
+            <WifiRoundedIcon fontSize="large"/>
+            VC        
+            </h3>
           </a>
        
         <button className='navbar-toggler' data-toggle='collapse' data-target='#navbarCollapse'>
@@ -19,20 +27,24 @@ const Navbar = ({
         <div id='navbarCollapse' className='collapse navbar-collapse'>
           <ul className='navbar-nav ml-auto'>
             <li className='nav-item px-1'>
-              <a href="#home" className='nav-link text-warning'>Home</a>
+              <a href="#home" className='nav-link text-warning'>
+              <HomeRoundedIcon fontSize="large"/>
+              Home </a>
             </li>
             <li className='nav-item px-1'>
               <button 
                 className='btn btn-out-line-primary shadow-none text-warning m-0'
                 data-toggle="modal"
                 data-target="#contactModal"
-                >Contact</button>
+                >
+                <PhoneForwardedRoundedIcon fontSize="large"/>
+                Contact</button>
             </li>
           </ul>
 
           <form className='d-flex max-width: 100% p-2 justify-content-end justify-content-md-start'>
           {
-            inputValue.name && <Fragment>
+            valid && <Fragment>
             <span className='p-1 mr-2 box-time'>
             <i className="fas fa-stopwatch mt-2 mr-1"></i>
             {time} 
@@ -40,16 +52,17 @@ const Navbar = ({
             </Fragment>
           }
           
-            
             <div className="input-group max-width: 100% h-25">
                 <span className='input-group-text'>
                   <i className='fas fa-user text-warning'></i>
-                </span>
-              <input type="text" className='form-control text-center' placeholder={inputValue.name}/>
+                </span>  
+
+              <input type="text" className='form-control text-center' placeholder={inputValue.name}/> 
+
             </div>
 
-            <button className='btn btn-outline-warning btn-block w-50 ml-1' type='submit' onClick={event => handleLogOut(event)}>
-              Log-out
+            <button className='btn btn-outline-warning btn-block  ml-1' type='submit' onClick={event => handleLogOut(event)}>
+              <LockOpenRoundedIcon />Log-out
             </button>
           </form>
         </div>
@@ -87,8 +100,8 @@ const Navbar = ({
               </div>
 
               <div className='modal-footer'>
-              <a href="#home-section">
-              <button className='btn btn-outline-light btn-block'>Contact Us</button>
+              <a href="#!">
+              <button className='btn btn-outline-warning'>Contact Us</button>
               </a>
               </div>
             </div>

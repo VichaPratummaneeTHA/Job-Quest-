@@ -2,6 +2,8 @@ import React, {Fragment, useState, useEffect} from 'react'
 import CardItem from './CardItem'
 import AddFavMovie from './AddFavMovie'
 import JokeFav from './JokeFav'
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 
 const SearchArea = () => {
 
@@ -118,9 +120,13 @@ const SearchArea = () => {
             <form className="row" onSubmit={event => handleSubmit(event)}>
 
             <div className="d-flex col-md-2 input-id-box">
-              <button className='btn btn-warning' onClick={(event) => handleIncreaseNumberId(event)}>+</button>
+              <button className='btn btn-dark' onClick={(event) => handleIncreaseNumberId(event)}>
+              <AddCircleIcon />
+              </button>
               <input name ='id' type="text" className='form-control mb-resp mx-1 p-2 text-center input-id' placeholder='ID' value={values.id} onChange={(event)=> handleChange(event)}/>
-              <button className='btn btn-secondary' onClick={(event) => handleDecreaseNumberId(event)}>-</button>
+              <button className='btn btn-dark' onClick={(event) => handleDecreaseNumberId(event)}>
+              <RemoveCircleIcon />
+              </button>
             </div>
            
             <div className="col-md-4">

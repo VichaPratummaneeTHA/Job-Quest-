@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react'
 import SearchArea from './card/SearchArea'
 import Footer from './Footer'
+import LockRoundedIcon from '@material-ui/icons/LockRounded';
 
 const Home = ({
   name, lastName, email, handleOnchange , inputValue, handleSubmit , submit, valid 
@@ -26,7 +27,7 @@ const Home = ({
                 </div>
                 <div className="p-3 d-flex w-100 justify-content-start">
                    <h4 >Step 1</h4>
-                   <p className='align-self-end'>Get Joke by Fill-in the form ...</p> 
+                   <p className='align-self-end text-light'>Get Joke by Fill-in the form ...</p> 
                 </div>
               </div>
 
@@ -36,7 +37,7 @@ const Home = ({
                 </div>
                 <div className="p-3 d-flex w-100 justify-content-start">
                   <h4>Step 2</h4>
-                  <p className='align-self-end'>We provide the joke for you ...</p> 
+                  <p className='align-self-end text-light'>We provide the joke for you ...</p> 
                 </div>
               </div>
 
@@ -46,7 +47,7 @@ const Home = ({
                 </div>
                 <div className="p-3 d-flex w-100 justify-content-start">
                 <h4>Step 3 </h4>
-                <p className='align-self-end'> Enjoy with The Joke ...</p> 
+                <p className='align-self-end text-light'> Enjoy with The Joke ...</p> 
                 </div>
               </div>
 
@@ -55,7 +56,8 @@ const Home = ({
             <div className="col-md-6 m-0 p-2">
               <div className="card bg-warning card-form">
                   <div className="card-body">
-                    <h3 className='text-light text-center'>Sign In{name}</h3>
+                    <h3 className='text-light text-center'>
+                    Sign In</h3>
                     <p className='text-light text-center'>Please fill out this form to sign-In</p>
                     <form onSubmit={(event) => handleSubmit(event)}>
                       <div className="form-group">
@@ -99,7 +101,7 @@ const Home = ({
                           submit && !email && <span className='text-danger'>** Please Enter Your Email **</span>
                         }
                       </div>
-                      <button type='submit' className='btn btn-outline-light btn-block'>SUMBIT</button>
+                      <button type='submit' className='btn btn-outline-light btn-block'><LockRoundedIcon />SUMBIT</button>
                     </form>
                   </div>
               </div>

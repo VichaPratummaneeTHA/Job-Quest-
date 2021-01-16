@@ -43,6 +43,7 @@ const App = () => {
       else{   
         alert('Try Again ..')
       }
+
       toggleSubmit(true)
       setFormData('')
       event.preventDefault();
@@ -64,6 +65,7 @@ const App = () => {
       <Navbar
       time= {time}
       inputValue = {inputValue}
+      valid={valid}
       handleLogOut = {handleLogOut}
        />
 

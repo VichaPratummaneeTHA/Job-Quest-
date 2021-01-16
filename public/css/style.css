@@ -217,6 +217,8 @@ body {
   #main-nav .navbar {
     width: 100%;
     padding: 0; }
+  #main-nav .input-group {
+    display: none; }
 
   #home-section .home-inner {
     padding-top: 8rem; }
