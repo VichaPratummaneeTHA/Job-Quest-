@@ -109,7 +109,7 @@ const SearchArea = () => {
   }
 
   useEffect(() => {
-    getRandomJoke(firstName, lastName);
+    getRandomJoke();
   }, []);
 
 
