@@ -60,6 +60,7 @@ const SearchArea = () => {
     if(!id && !firstName && !lastName){
       getRandomJoke('John', 'Doe');
     }
+    
     setValues({
       id: 0,
       firstName: '',
