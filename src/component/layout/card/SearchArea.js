@@ -32,14 +32,6 @@ const SearchArea = () => {
  
   const getRandomJoke = async (firstName, lastName) => {
 
-    if(!firstName) {
-      firstName = 'John'
-    }
-
-    if(!lastName) {
-      lastName = 'Doe'
-    }
- 
     const url = `https://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}`
     const res = await fetch(url);
     const JSON = await res.json();
@@ -66,7 +58,7 @@ const SearchArea = () => {
     }
 
     if(!id && !firstName && !lastName){
-      getRandomJoke();
+      getRandomJoke('John', 'Doe');
     }
     setValues({
       id: 0,
@@ -110,7 +102,7 @@ const SearchArea = () => {
 
   useEffect(() => {
     getRandomJoke(firstName, lastName);
-  }, [firstName, lastName]);
+  }, []);
 
 
   return (
